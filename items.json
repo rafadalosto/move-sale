@@ -1,0 +1,34 @@
+[
+  {
+    "id": "jaxx-sofa",
+    "title": "JAXX Choice Sofa",
+    "price": 800,
+    "badge": "8 Mos Old",
+    "specs": ["2,5 seats capacity", "Waterproof fabric"],
+    "description": "Beautiful condition, barely used, smoke-free home.",
+    "image": "images/sample-sofa.svg",
+    "dealName": "Living Room Combo",
+    "dealLink": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Combo"
+  },
+  {
+    "id": "lg-tv",
+    "title": "LG Smart TV OLED 55\"",
+    "price": 350,
+    "badge": "4 Yrs Old",
+    "specs": ["120Hz refresh rate", "4 years of use"],
+    "description": "Stunning picture, works perfectly, minor stand scuff.",
+    "image": "images/sample-tv.svg",
+    "specsLink": "https://www.lg.com/nl/tvs"
+  },
+  {
+    "id": "ikea-mirror",
+    "title": "IKEA Mirror",
+    "price": 15,
+    "badge": "New",
+    "specs": ["40 x 150 cm", "Brand new condition"],
+    "description": "Can be hung horizontally or vertically.",
+    "image": "images/sample-mirror.svg",
+    "dealName": "Living Room Combo",
+    "dealLink": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Combo"
+  }
+]
