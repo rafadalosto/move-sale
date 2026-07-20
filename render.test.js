@@ -45,3 +45,68 @@ test("isValidDeal accepts a deal with name, price, and image", () => {
 test("isValidDeal rejects a deal missing image", () => {
   assert.equal(isValidDeal({ name: "Combo", price: 1000 }), false);
 });
+
+const { renderItemCardHTML, renderDealCardHTML } = require("./render.js");
+
+test("renderItemCardHTML includes price, title, and badge", () => {
+  const html = renderItemCardHTML({
+    id: "sofa",
+    title: "JAXX Choice Sofa",
+    price: 800,
+    badge: "8 Mos Old",
+    image: "images/sofa.jpg",
+  });
+  assert.match(html, /EUR 800,00/);
+  assert.match(html, /JAXX Choice Sofa/);
+  assert.match(html, /8 Mos Old/);
+  assert.match(html, /class="card card--item"/);
+});
+
+test("renderItemCardHTML escapes HTML-sensitive characters in title", () => {
+  const html = renderItemCardHTML({
+    id: "x",
+    title: 'Rafael\'s "Best" Sofa <sale>',
+    price: 10,
+    image: "images/x.jpg",
+  });
+  assert.equal(html.includes("<sale>"), false);
+  assert.match(html, /Rafael&#39;s &quot;Best&quot; Sofa &lt;sale&gt;/);
+});
+
+test("renderItemCardHTML adds a deal tag when dealName/dealLink are set", () => {
+  const html = renderItemCardHTML({
+    id: "sofa",
+    title: "Sofa",
+    price: 800,
+    image: "images/sofa.jpg",
+    dealName: "Living Room Combo",
+    dealLink: "https://wa.me/31620659657",
+  });
+  assert.match(html, /card__deal-tag/);
+  assert.match(html, /Living Room Combo/);
+});
+
+test("renderItemCardHTML omits the deal tag when dealName/dealLink are absent", () => {
+  const html = renderItemCardHTML({
+    id: "sofa",
+    title: "Sofa",
+    price: 800,
+    image: "images/sofa.jpg",
+  });
+  assert.equal(html.includes("card__deal-tag"), false);
+});
+
+test("renderDealCardHTML includes price, original price, and free delivery badge", () => {
+  const html = renderDealCardHTML({
+    id: "combo",
+    name: "Living Room Combo",
+    price: 1000,
+    originalPrice: 1150,
+    freeDelivery: true,
+    image: "images/combo.jpg",
+  });
+  assert.match(html, /EUR 1000,00/);
+  assert.match(html, /EUR 1150,00/);
+  assert.match(html, /Free delivery/);
+  assert.match(html, /class="card card--deal"/);
+});
