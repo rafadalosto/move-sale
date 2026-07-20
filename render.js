@@ -11,12 +11,17 @@
     return "EUR " + parts[0] + "," + parts[1];
   }
 
+  function hasValidImages(images) {
+    return Array.isArray(images) && images.length > 0 &&
+      images.every(function (src) { return typeof src === "string" && src.trim() !== ""; });
+  }
+
   function isValidItem(item) {
     return Boolean(
       item &&
       typeof item.title === "string" && item.title.trim() !== "" &&
       typeof item.price === "number" && !Number.isNaN(item.price) &&
-      typeof item.image === "string" && item.image.trim() !== ""
+      hasValidImages(item.images)
     );
   }
 
@@ -25,7 +30,7 @@
       deal &&
       typeof deal.name === "string" && deal.name.trim() !== "" &&
       typeof deal.price === "number" && !Number.isNaN(deal.price) &&
-      typeof deal.image === "string" && deal.image.trim() !== ""
+      hasValidImages(deal.images)
     );
   }
 
@@ -36,6 +41,40 @@
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;");
+  }
+
+  function renderCarouselHTML(images, altBase) {
+    const multi = images.length > 1;
+
+    const slides = images.map(function (src, index) {
+      const alt = multi
+        ? escapeHTML(altBase) + " — photo " + (index + 1) + " of " + images.length
+        : escapeHTML(altBase);
+      return '<img class="card__carousel-slide" src="' + escapeHTML(src) + '" alt="' + alt +
+        '" loading="lazy" onerror="this.onerror=null;this.src=\'images/placeholder.svg\'">';
+    }).join("");
+
+    const dots = multi
+      ? images.map(function (_, index) {
+          const activeClass = index === 0 ? " card__carousel-dot--active" : "";
+          const ariaCurrent = index === 0 ? ' aria-current="true"' : "";
+          return '<button class="card__carousel-dot' + activeClass + '" aria-label="Photo ' +
+            (index + 1) + '" type="button"' + ariaCurrent + "></button>";
+        }).join("")
+      : "";
+
+    const controls = multi
+      ? '<button class="card__carousel-arrow card__carousel-arrow--prev" aria-label="Previous photo" type="button">‹</button>' +
+        '<button class="card__carousel-arrow card__carousel-arrow--next" aria-label="Next photo" type="button">›</button>' +
+        '<div class="card__carousel-dots">' + dots + "</div>"
+      : "";
+
+    return (
+      '<div class="card__carousel">' +
+      '<div class="card__carousel-track">' + slides + "</div>" +
+      controls +
+      "</div>"
+    );
   }
 
   function renderItemCardHTML(item) {
@@ -62,8 +101,7 @@
     return (
       '<article class="card card--item">' +
       badge +
-      '<img class="card__image" src="' + escapeHTML(item.image) + '" alt="' + escapeHTML(item.title) +
-      '" loading="lazy" onerror="this.onerror=null;this.src=\'images/placeholder.svg\'">' +
+      renderCarouselHTML(item.images, item.title) +
       '<div class="card__body">' +
       '<p class="card__price">' + formatPrice(item.price) + "</p>" +
       "<h3 class=\"card__title\">" + escapeHTML(item.title) + "</h3>" +
@@ -99,8 +137,7 @@
     return (
       '<article class="card card--deal">' +
       freeDelivery +
-      '<img class="card__image" src="' + escapeHTML(deal.image) + '" alt="' + escapeHTML(deal.name) +
-      '" loading="lazy" onerror="this.onerror=null;this.src=\'images/placeholder.svg\'">' +
+      renderCarouselHTML(deal.images, deal.name) +
       '<div class="card__body">' +
       '<p class="card__price">' + formatPrice(deal.price) + " " + originalPrice + "</p>" +
       "<h3 class=\"card__title\">" + escapeHTML(deal.name) + "</h3>" +
