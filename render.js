@@ -112,11 +112,25 @@
     );
   }
 
+  function buildCardList(items, deals, filter) {
+    const validDeals = (Array.isArray(deals) ? deals : []).filter(isValidDeal);
+    const validItems = (Array.isArray(items) ? items : []).filter(isValidItem);
+
+    const dealCards = validDeals.map(renderDealCardHTML);
+    const itemCards = validItems.map(renderItemCardHTML);
+
+    if (filter === "deals") {
+      return dealCards.join("");
+    }
+    return dealCards.concat(itemCards).join("");
+  }
+
   return {
     formatPrice: formatPrice,
     isValidItem: isValidItem,
     isValidDeal: isValidDeal,
     renderItemCardHTML: renderItemCardHTML,
     renderDealCardHTML: renderDealCardHTML,
+    buildCardList: buildCardList,
   };
 });

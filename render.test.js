@@ -110,3 +110,32 @@ test("renderDealCardHTML includes price, original price, and free delivery badge
   assert.match(html, /Free delivery/);
   assert.match(html, /class="card card--deal"/);
 });
+
+const { buildCardList } = require("./render.js");
+
+test("buildCardList puts deals before items under the 'all' filter", () => {
+  const items = [{ id: "a", title: "Item A", price: 1, image: "a.jpg" }];
+  const deals = [{ id: "d", name: "Deal D", price: 2, image: "d.jpg" }];
+  const html = buildCardList(items, deals, "all");
+  assert.ok(html.indexOf("Deal D") < html.indexOf("Item A"));
+});
+
+test("buildCardList returns only deal cards under the 'deals' filter", () => {
+  const items = [{ id: "a", title: "Item A", price: 1, image: "a.jpg" }];
+  const deals = [{ id: "d", name: "Deal D", price: 2, image: "d.jpg" }];
+  const html = buildCardList(items, deals, "deals");
+  assert.match(html, /Deal D/);
+  assert.equal(html.includes("Item A"), false);
+});
+
+test("buildCardList skips invalid items and deals", () => {
+  const items = [{ id: "a", title: "Item A", price: 1, image: "a.jpg" }, { id: "bad" }];
+  const deals = [{ id: "d", name: "Deal D", price: 2, image: "d.jpg" }, { id: "bad" }];
+  const html = buildCardList(items, deals, "all");
+  const cardCount = (html.match(/class="card /g) || []).length;
+  assert.equal(cardCount, 2);
+});
+
+test("buildCardList returns an empty string for empty inputs", () => {
+  assert.equal(buildCardList([], [], "all"), "");
+});
