@@ -4,28 +4,31 @@
     "title": "JAXX Choice Sofa",
     "price": 800,
     "badge": "8 Months Old",
-    "specs": ["2,5 seats", "Width: 213 cm", "Waterproof, 5-year warranty against stains"],
+    "specs": [
+      "2,5 seats",
+      "Width: 213 cm",
+      "Waterproof, 5-year warranty against stains"
+    ],
     "description": "JAXX Choice sofa in great condition, only 8 months of use.",
     "images": ["images/sofa-1.jpg", "images/sofa-2.jpg"],
     "dealName": "Living Room Bundle",
     "dealLink": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Bundle"
   },
   {
-    "id": "bicycles-set",
-    "title": "2 Bicycles + Child Seat",
-    "price": 500,
-    "badge": "5 Years Old",
-    "specs": ["Batavus men's bicycle, Fonk model", "Batavus women's bicycle, Fonk model", "Urban Iki front child seat, up to 15 kg"],
-    "description": "Two Batavus city bicycles (Fonk model), sold together with a 1-year-old Urban Iki front child seat.",
-    "images": ["images/bicycles-1.jpg", "images/bicycles-2.jpg", "images/bicycles-3.jpg"]
-  },
-  {
     "id": "dining-table-chairs",
     "title": "Dining Table + 6 Chairs",
     "price": 300,
-    "specs": ["Table: wood and white, 100 x 200 cm", "6x IKEA BERGMUND chair frames, white", "Removable, washable Hallarp beige chair covers"],
+    "specs": [
+      "Table: wood and white, 100 x 200 cm",
+      "6x IKEA BERGMUND chair frames, white",
+      "Removable, washable Hallarp beige chair covers"
+    ],
     "description": "Dining table with 6 matching IKEA BERGMUND chairs.",
-    "images": ["images/dining-table-1.jpg", "images/dining-table-2.jpg", "images/dining-table-3.jpg"],
+    "images": [
+      "images/dining-table-1.jpg",
+      "images/dining-table-2.jpg",
+      "images/dining-table-3.jpg"
+    ],
     "specsLink": "https://www.ikea.com/nl/en/p/bergmund-chair-frame-white-40451905/"
   },
   {
@@ -43,7 +46,11 @@
     "id": "elvarli-wardrobe",
     "title": "IKEA ELVARLI Wardrobe Combination",
     "price": 150,
-    "specs": ["2 units", "Wardrobe combination (4 drawers), white, 165 x 55 x 216 cm", "Wardrobe combination (3 shelves), white, 84 x 40 x 216 cm"],
+    "specs": [
+      "2 units",
+      "Wardrobe combination (4 drawers), white, 165 x 55 x 216 cm",
+      "Wardrobe combination (3 shelves), white, 84 x 40 x 216 cm"
+    ],
     "description": "Modular ELVARLI wardrobe combination, flexible open storage system.",
     "images": ["images/wardrobe-1.jpg", "images/wardrobe-2.jpg"],
     "specsLink": "https://www.ikea.com/nl/nl/cat/elvarli-systeem-35766/"
@@ -110,7 +117,12 @@
     "title": "IKEA BOAXEL Mesh Basket",
     "price": 25,
     "badge": "New, Never Installed",
-    "specs": ["3 units", "White", "60 x 40 x 15 cm", "Includes brackets and wall upright"],
+    "specs": [
+      "3 units",
+      "White",
+      "60 x 40 x 15 cm",
+      "Includes brackets and wall upright"
+    ],
     "description": "BOAXEL mesh baskets, new and never installed, includes mounting hardware.",
     "images": ["images/mesh-basket-1.jpg", "images/mesh-basket-2.jpg"],
     "specsLink": "https://www.ikea.com/nl/en/p/boaxel-mesh-basket-white-20448749/"
