@@ -196,6 +196,7 @@ body {
   object-fit: cover;
   scroll-snap-align: start;
   display: block;
+  cursor: zoom-in;
 }
 
 .card__carousel-arrow {
@@ -314,4 +315,41 @@ body {
   .card:hover {
     transform: none;
   }
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox__image {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: var(--border-thick);
+  background: var(--color-bg);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--color-yellow);
+  color: var(--color-black);
+  border: var(--border-thin);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
 }

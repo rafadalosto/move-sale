@@ -2,12 +2,52 @@
   const grid = document.getElementById("grid");
   const loadError = document.getElementById("load-error");
   const filterButtons = document.querySelectorAll(".filter-tabs__btn");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+  const lightboxClose = document.querySelector(".lightbox__close");
 
   const state = { items: [], deals: [], filter: "all" };
 
   function render() {
     grid.innerHTML = window.MovingSale.buildCardList(state.items, state.deals, state.filter);
     wireCarousels();
+    wireLightbox();
+  }
+
+  function openLightbox(src, alt) {
+    lightboxImage.src = src;
+    lightboxImage.alt = alt;
+    lightbox.hidden = false;
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    lightboxImage.src = "";
+  }
+
+  lightboxClose.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", function (event) {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+  });
+
+  function wireLightbox() {
+    const slides = grid.querySelectorAll(".card__carousel-slide");
+    slides.forEach(function (slide) {
+      slide.addEventListener("click", function () {
+        const src = slide.getAttribute("src");
+        const highSrc = src.replace(/(\.[a-zA-Z0-9]+)$/, "-HIGH$1");
+        openLightbox(highSrc, slide.getAttribute("alt"));
+      });
+    });
   }
 
   function wireCarousels() {
