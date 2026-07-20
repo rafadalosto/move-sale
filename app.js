@@ -18,7 +18,7 @@
     window.setTimeout(function () {
       render();
       grid.classList.remove("grid--filtering");
-    }, 150);
+    }, 200);
   }
 
   filterButtons.forEach(function (btn) {
