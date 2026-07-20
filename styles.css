@@ -241,3 +241,14 @@ body {
 .card__cta:hover {
   background: var(--color-red);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    opacity: 1;
+    animation: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
