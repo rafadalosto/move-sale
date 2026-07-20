@@ -173,12 +173,75 @@ body {
   background: var(--color-blue);
 }
 
-.card__image {
+.card__carousel {
+  position: relative;
+}
+
+.card__carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border-bottom: var(--border-thick);
+}
+
+.card__carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.card__carousel-slide {
+  flex: 0 0 100%;
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-bottom: var(--border-thick);
+  scroll-snap-align: start;
   display: block;
+}
+
+.card__carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(17, 17, 17, 0.7);
+  color: #ffffff;
+  border: var(--border-thin);
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.card__carousel-arrow--prev {
+  left: 0.5rem;
+}
+
+.card__carousel-arrow--next {
+  right: 0.5rem;
+}
+
+.card__carousel-dots {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.4rem;
+  z-index: 1;
+}
+
+.card__carousel-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--color-black);
+  padding: 0;
+  cursor: pointer;
+}
+
+.card__carousel-dot--active {
+  background: var(--color-yellow);
 }
 
 .card__body {
