@@ -5,8 +5,12 @@
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightbox-image");
   const lightboxClose = document.querySelector(".lightbox__close");
+  const lightboxPrevBtn = document.querySelector(".lightbox__arrow--prev");
+  const lightboxNextBtn = document.querySelector(".lightbox__arrow--next");
 
   const state = { items: [], deals: [], filter: "all" };
+  let lightboxPhotos = [];
+  let lightboxIndex = 0;
 
   function render() {
     grid.innerHTML = window.MovingSale.buildCardList(state.items, state.deals, state.filter);
@@ -14,18 +18,51 @@
     wireLightbox();
   }
 
-  function openLightbox(src, alt) {
-    lightboxImage.src = src;
-    lightboxImage.alt = alt;
+  function highSrcFor(src) {
+    return src.replace(/(\.[a-zA-Z0-9]+)$/, "-HIGH$1");
+  }
+
+  function showLightboxPhoto() {
+    const photo = lightboxPhotos[lightboxIndex];
+    lightboxImage.src = highSrcFor(photo.src);
+    lightboxImage.alt = photo.alt;
+    const multi = lightboxPhotos.length > 1;
+    lightboxPrevBtn.hidden = !multi;
+    lightboxNextBtn.hidden = !multi;
+  }
+
+  function openLightbox(photos, index) {
+    lightboxPhotos = photos;
+    lightboxIndex = index;
+    showLightboxPhoto();
     lightbox.hidden = false;
   }
 
   function closeLightbox() {
     lightbox.hidden = true;
     lightboxImage.src = "";
+    lightboxPhotos = [];
+  }
+
+  function lightboxPrev() {
+    if (lightboxPhotos.length < 2) {
+      return;
+    }
+    lightboxIndex = (lightboxIndex - 1 + lightboxPhotos.length) % lightboxPhotos.length;
+    showLightboxPhoto();
+  }
+
+  function lightboxNext() {
+    if (lightboxPhotos.length < 2) {
+      return;
+    }
+    lightboxIndex = (lightboxIndex + 1) % lightboxPhotos.length;
+    showLightboxPhoto();
   }
 
   lightboxClose.addEventListener("click", closeLightbox);
+  lightboxPrevBtn.addEventListener("click", lightboxPrev);
+  lightboxNextBtn.addEventListener("click", lightboxNext);
 
   lightbox.addEventListener("click", function (event) {
     if (event.target === lightbox) {
@@ -34,18 +71,29 @@
   });
 
   document.addEventListener("keydown", function (event) {
+    if (lightbox.hidden) {
+      return;
+    }
     if (event.key === "Escape") {
       closeLightbox();
+    } else if (event.key === "ArrowLeft") {
+      lightboxPrev();
+    } else if (event.key === "ArrowRight") {
+      lightboxNext();
     }
   });
 
   function wireLightbox() {
-    const slides = grid.querySelectorAll(".card__carousel-slide");
-    slides.forEach(function (slide) {
-      slide.addEventListener("click", function () {
-        const src = slide.getAttribute("src");
-        const highSrc = src.replace(/(\.[a-zA-Z0-9]+)$/, "-HIGH$1");
-        openLightbox(highSrc, slide.getAttribute("alt"));
+    const tracks = grid.querySelectorAll(".card__carousel-track");
+    tracks.forEach(function (track) {
+      const slides = track.querySelectorAll(".card__carousel-slide");
+      const photos = Array.prototype.map.call(slides, function (slide) {
+        return { src: slide.getAttribute("src"), alt: slide.getAttribute("alt") };
+      });
+      slides.forEach(function (slide, index) {
+        slide.addEventListener("click", function () {
+          openLightbox(photos, index);
+        });
       });
     });
   }

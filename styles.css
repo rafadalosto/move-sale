@@ -353,3 +353,30 @@ body {
   line-height: 1;
   cursor: pointer;
 }
+
+.lightbox__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(17, 17, 17, 0.7);
+  color: #ffffff;
+  border: var(--border-thin);
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.lightbox__arrow--prev {
+  left: 1rem;
+}
+
+.lightbox__arrow--next {
+  right: 1rem;
+}
+
+.lightbox__arrow[hidden] {
+  display: none;
+}
