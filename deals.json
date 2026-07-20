@@ -1,13 +1,1 @@
-[
-  {
-    "id": "livingroom-combo",
-    "name": "Living Room Combo",
-    "price": 1000,
-    "originalPrice": 1150,
-    "freeDelivery": true,
-    "items": ["JAXX Choice Sofa", "IKEA Mirror"],
-    "image": "images/sample-deal.svg",
-    "link": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Combo",
-    "description": "Buy the sofa and mirror together and save EUR 150, with free delivery in Almere."
-  }
-]
+[]

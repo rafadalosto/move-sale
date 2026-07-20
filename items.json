@@ -3,32 +3,146 @@
     "id": "jaxx-sofa",
     "title": "JAXX Choice Sofa",
     "price": 800,
-    "badge": "8 Mos Old",
-    "specs": ["2,5 seats capacity", "Waterproof fabric"],
-    "description": "Beautiful condition, barely used, smoke-free home.",
-    "image": "images/sample-sofa.svg",
-    "dealName": "Living Room Combo",
-    "dealLink": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Combo"
+    "badge": "8 Months Old",
+    "specs": ["2,5 seats", "Width: 213 cm", "Waterproof, 5-year warranty against stains"],
+    "description": "JAXX Choice sofa in great condition, only 8 months of use.",
+    "image": "images/sofa.jpg"
+  },
+  {
+    "id": "bicycles-set",
+    "title": "2 Bicycles + Child Seat",
+    "price": 500,
+    "badge": "5 Years Old",
+    "specs": ["Batavus men's bicycle, Fonk model", "Batavus women's bicycle, Fonk model", "Urban Iki front child seat, up to 15 kg"],
+    "description": "Two Batavus city bicycles (Fonk model), sold together with a 1-year-old Urban Iki front child seat.",
+    "image": "images/bicycles.jpg"
+  },
+  {
+    "id": "dining-table-chairs",
+    "title": "Dining Table + 6 Chairs",
+    "price": 300,
+    "specs": ["Table: wood and white, 100 x 200 cm", "6x IKEA BERGMUND chair frames, white", "Removable, washable Hallarp beige chair covers"],
+    "description": "Dining table with 6 matching IKEA BERGMUND chairs.",
+    "image": "images/dining-table.jpg",
+    "specsLink": "https://www.ikea.com/nl/en/p/bergmund-chair-frame-white-40451905/"
   },
   {
     "id": "lg-tv",
     "title": "LG Smart TV OLED 55\"",
     "price": 350,
-    "badge": "4 Yrs Old",
-    "specs": ["120Hz refresh rate", "4 years of use"],
-    "description": "Stunning picture, works perfectly, minor stand scuff.",
-    "image": "images/sample-tv.svg",
-    "specsLink": "https://www.lg.com/nl/tvs"
+    "badge": "4 Years Old",
+    "specs": ["OLED display", "120Hz refresh rate"],
+    "description": "LG Smart TV OLED 55\", 4 years of use.",
+    "image": "images/tv.jpg"
   },
   {
-    "id": "ikea-mirror",
-    "title": "IKEA Mirror",
+    "id": "elvarli-wardrobe",
+    "title": "IKEA ELVARLI Wardrobe Combination",
+    "price": 150,
+    "specs": ["2 units", "Wardrobe combination (4 drawers), white, 165 x 55 x 216 cm", "Wardrobe combination (3 shelves), white, 84 x 40 x 216 cm"],
+    "description": "Modular ELVARLI wardrobe combination, flexible open storage system.",
+    "image": "images/wardrobe.jpg",
+    "specsLink": "https://www.ikea.com/nl/nl/cat/elvarli-systeem-35766/"
+  },
+  {
+    "id": "hemnes-mirror-cabinet",
+    "title": "IKEA Hemnes High Cabinet with Mirror Door",
+    "price": 50,
+    "badge": "Has a Damage Hole",
+    "specs": ["White", "49 x 31 x 200 cm"],
+    "description": "Hemnes high cabinet with mirror door. Has a damage hole — check the photo.",
+    "image": "images/mirror-cabinet.jpg",
+    "specsLink": "https://www.ikea.com/nl/en/p/hemnes-high-cabinet-with-mirror-door-white-70217685/"
+  },
+  {
+    "id": "hemnes-chest-8",
+    "title": "IKEA Hemnes Chest of 8 Drawers",
+    "price": 70,
+    "specs": ["White stain", "160 x 96 cm"],
+    "description": "Hemnes chest of 8 drawers, white stain finish.",
+    "image": "images/chest-8-drawers.jpg",
+    "specsLink": "https://www.ikea.com/nl/nl/p/hemnes-ladekast-8-lades-wit-gebeitst-10239280/"
+  },
+  {
+    "id": "malm-chest-4",
+    "title": "IKEA Malm Chest of 4 Drawers",
+    "price": 25,
+    "specs": ["White", "80 x 100 cm"],
+    "description": "Malm chest of 4 drawers, white.",
+    "image": "images/chest-4-drawers.jpg",
+    "specsLink": "https://www.ikea.com/nl/en/p/malm-chest-of-4-drawers-white-30403571/"
+  },
+  {
+    "id": "hemnes-tv-bench",
+    "title": "IKEA Hemnes TV Bench",
+    "price": 25,
+    "specs": ["White stain", "Width: 180 cm"],
+    "description": "Hemnes TV bench, white stain finish.",
+    "image": "images/tv-bench.jpg"
+  },
+  {
+    "id": "hemnes-daybed",
+    "title": "IKEA Hemnes Day-bed Frame",
+    "price": 100,
+    "badge": "Signs of Use",
+    "specs": ["3 drawers", "White", "80 x 200 cm"],
+    "description": "Hemnes day-bed frame with 3 drawers. Has some signs of use.",
+    "image": "images/daybed.jpg",
+    "specsLink": "https://www.ikea.com/nl/en/p/hemnes-day-bed-frame-with-3-drawers-white-90349326/"
+  },
+  {
+    "id": "eket-cabinet",
+    "title": "IKEA EKET Cabinet, Oak Effect",
+    "price": 15,
+    "specs": ["2 units", "Wall-mounted shelving unit", "35 x 25 x 35 cm"],
+    "description": "EKET wall-mounted shelving units, white stained oak effect.",
+    "image": "images/eket-cabinet.jpg",
+    "specsLink": "https://www.ikea.com/nl/en/p/eket-wall-mounted-shelving-unit-white-stained-oak-effect-s29286257/"
+  },
+  {
+    "id": "boaxel-mesh-basket",
+    "title": "IKEA BOAXEL Mesh Basket",
+    "price": 25,
+    "badge": "New, Never Installed",
+    "specs": ["3 units", "White", "60 x 40 x 15 cm", "Includes brackets and wall upright"],
+    "description": "BOAXEL mesh baskets, new and never installed, includes mounting hardware.",
+    "image": "images/mesh-basket.jpg",
+    "specsLink": "https://www.ikea.com/nl/en/p/boaxel-mesh-basket-white-20448749/"
+  },
+  {
+    "id": "nissedal-mirror",
+    "title": "IKEA NISSEDAL Mirror",
     "price": 15,
     "badge": "New",
-    "specs": ["40 x 150 cm", "Brand new condition"],
-    "description": "Can be hung horizontally or vertically.",
-    "image": "images/sample-mirror.svg",
-    "dealName": "Living Room Combo",
-    "dealLink": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Combo"
+    "specs": ["White stained oak effect", "40 x 150 cm"],
+    "description": "NISSEDAL mirror, brand new.",
+    "image": "images/mirror.jpg",
+    "specsLink": "https://www.ikea.com/nl/en/p/nissedal-mirror-white-stained-oak-effect-80390868/"
+  },
+  {
+    "id": "fonq-wall-lamps",
+    "title": "FONQ Wall Lamps (Set of 2)",
+    "price": 40,
+    "badge": "New in Box",
+    "specs": ["2 units", "Color: gold", "15 x 20 cm"],
+    "description": "FONQ trio-pure wall lamps, gold, new in the box.",
+    "image": "images/wall-lamps.jpg"
+  },
+  {
+    "id": "tp-link-router",
+    "title": "TP-Link Router",
+    "price": 0,
+    "badge": "Donation",
+    "description": "Free to a good home — working TP-Link router.",
+    "image": "images/router.jpg"
+  },
+  {
+    "id": "venetian-blinds",
+    "title": "Blinds Venetia",
+    "price": 0,
+    "badge": "Donation",
+    "specs": ["2 units", "1,50 m width x 1,55 m height"],
+    "description": "Free Venetian blinds, 2 units.",
+    "image": "images/blinds.jpg"
   }
 ]
