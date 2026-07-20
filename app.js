@@ -23,11 +23,15 @@
       }
 
       prevBtn.addEventListener("click", function () {
-        track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
+        const currentIndex = Math.round(track.scrollLeft / track.clientWidth);
+        const targetIndex = (currentIndex - 1 + dots.length) % dots.length;
+        track.scrollTo({ left: targetIndex * track.clientWidth, behavior: "smooth" });
       });
 
       nextBtn.addEventListener("click", function () {
-        track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
+        const currentIndex = Math.round(track.scrollLeft / track.clientWidth);
+        const targetIndex = (currentIndex + 1) % dots.length;
+        track.scrollTo({ left: targetIndex * track.clientWidth, behavior: "smooth" });
       });
 
       dots.forEach(function (dot, index) {
