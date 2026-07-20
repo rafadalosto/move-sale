@@ -89,9 +89,8 @@
     const description = item.description
       ? '<p class="card__description">' + escapeHTML(item.description) + "</p>"
       : "";
-    const dealTag = item.dealName && item.dealLink
-      ? '<a class="card__deal-tag" href="' + escapeHTML(item.dealLink) +
-        '" target="_blank" rel="noopener">🔗 Part of: ' + escapeHTML(item.dealName) + "</a>"
+    const dealTag = item.dealName
+      ? '<span class="card__deal-tag">🔗 Part of: ' + escapeHTML(item.dealName) + "</span>"
       : "";
     const specsLink = item.specsLink
       ? '<a class="card__cta" href="' + escapeHTML(item.specsLink) +
@@ -131,7 +130,7 @@
       : "";
     const link = deal.link
       ? '<a class="card__cta" href="' + escapeHTML(deal.link) +
-        '" target="_blank" rel="noopener">View Deal ↗</a>'
+        '" target="_blank" rel="noopener">💬 I want it</a>'
       : "";
 
     return (

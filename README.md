@@ -14,7 +14,7 @@ Edit `items.json`. Each entry:
 - `specs` (array of strings, optional) — short bullet points
 - `description` (string, optional)
 - `specsLink` (string, optional) — full URL, adds a "View Specs ↗" button
-- `dealName` / `dealLink` (strings, optional, both-or-neither) — marks the item as part of a deal; shows a "🔗 Part of: {dealName}" tag linking to `dealLink`
+- `dealName` (string, optional) — marks the item as part of a deal; shows a plain, non-clickable "🔗 Part of: {dealName}" tag (it doesn't link anywhere, to avoid opening WhatsApp by accident)
 
 To mark something sold, delete its entry from `items.json`.
 
@@ -26,10 +26,10 @@ Edit `deals.json`. Each entry:
 - `originalPrice` (number, optional) — shown struck-through to imply savings
 - `freeDelivery` (boolean, optional) — shows a "🚚 Free delivery" badge
 - `items` (array of strings, optional) — display-only list of bundled item names
-- `link` (string, optional) — outbound URL for the "View Deal ↗" button
+- `link` (string, optional) — outbound URL for the "💬 I want it" button
 - `description` (string, optional)
 
-An item is linked to a deal only through its own `dealName`/`dealLink` fields — `deals.json` does not reference `items.json`.
+An item is linked to a deal only through its own `dealName` field (display-only, not a link) — `deals.json` does not reference `items.json`.
 
 ## Adding photos
 

@@ -11,8 +11,7 @@
     ],
     "description": "JAXX Choice sofa in great condition, only 8 months of use.",
     "images": ["images/sofa-1.jpg", "images/sofa-2.jpg"],
-    "dealName": "Living Room Bundle",
-    "dealLink": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Bundle"
+    "dealName": "Living Room Bundle"
   },
   {
     "id": "dining-table-chairs",
@@ -39,8 +38,7 @@
     "specs": ["OLED display", "120Hz refresh rate"],
     "description": "LG Smart TV OLED 55\", 4 years of use.",
     "images": ["images/tv-1.jpg", "images/tv-2.jpg"],
-    "dealName": "Living Room Bundle",
-    "dealLink": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Bundle"
+    "dealName": "Living Room Bundle"
   },
   {
     "id": "elvarli-wardrobe",
@@ -90,8 +88,7 @@
     "specs": ["White stain", "Width: 180 cm"],
     "description": "Hemnes TV bench, white stain finish.",
     "images": ["images/tv-bench.jpg"],
-    "dealName": "Living Room Bundle",
-    "dealLink": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Bundle"
+    "dealName": "Living Room Bundle"
   },
   {
     "id": "hemnes-daybed",

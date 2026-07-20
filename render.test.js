@@ -92,20 +92,20 @@ test("renderItemCardHTML escapes HTML-sensitive characters in title", () => {
   assert.match(html, /Rafael&#39;s &quot;Best&quot; Sofa &lt;sale&gt;/);
 });
 
-test("renderItemCardHTML adds a deal tag when dealName/dealLink are set", () => {
+test("renderItemCardHTML adds a non-clickable deal tag when dealName is set", () => {
   const html = renderItemCardHTML({
     id: "sofa",
     title: "Sofa",
     price: 800,
     images: ["images/sofa.jpg"],
     dealName: "Living Room Combo",
-    dealLink: "https://wa.me/31620659657",
   });
-  assert.match(html, /card__deal-tag/);
+  assert.match(html, /<span class="card__deal-tag">/);
   assert.match(html, /Living Room Combo/);
+  assert.equal(html.includes('<a class="card__deal-tag"'), false);
 });
 
-test("renderItemCardHTML omits the deal tag when dealName/dealLink are absent", () => {
+test("renderItemCardHTML omits the deal tag when dealName is absent", () => {
   const html = renderItemCardHTML({
     id: "sofa",
     title: "Sofa",
@@ -170,6 +170,17 @@ test("renderDealCardHTML includes price, original price, and free delivery badge
   assert.match(html, /EUR 1150,00/);
   assert.match(html, /Free delivery/);
   assert.match(html, /class="card card--deal"/);
+});
+
+test('renderDealCardHTML shows "I want it" as the outbound link text', () => {
+  const html = renderDealCardHTML({
+    id: "combo",
+    name: "Combo",
+    price: 1000,
+    images: ["images/combo.jpg"],
+    link: "https://wa.me/31620659657",
+  });
+  assert.match(html, />💬 I want it<\/a>/);
 });
 
 test("renderDealCardHTML renders dots matching the number of images", () => {
