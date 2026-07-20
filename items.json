@@ -6,7 +6,9 @@
     "badge": "8 Months Old",
     "specs": ["2,5 seats", "Width: 213 cm", "Waterproof, 5-year warranty against stains"],
     "description": "JAXX Choice sofa in great condition, only 8 months of use.",
-    "images": ["images/sofa-1.jpg", "images/sofa-2.jpg"]
+    "images": ["images/sofa-1.jpg", "images/sofa-2.jpg"],
+    "dealName": "Living Room Bundle",
+    "dealLink": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Bundle"
   },
   {
     "id": "bicycles-set",
@@ -33,7 +35,9 @@
     "badge": "4 Years Old",
     "specs": ["OLED display", "120Hz refresh rate"],
     "description": "LG Smart TV OLED 55\", 4 years of use.",
-    "images": ["images/tv-1.jpg", "images/tv-2.jpg"]
+    "images": ["images/tv-1.jpg", "images/tv-2.jpg"],
+    "dealName": "Living Room Bundle",
+    "dealLink": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Bundle"
   },
   {
     "id": "elvarli-wardrobe",
@@ -78,7 +82,9 @@
     "price": 25,
     "specs": ["White stain", "Width: 180 cm"],
     "description": "Hemnes TV bench, white stain finish.",
-    "images": ["images/tv-bench.jpg"]
+    "images": ["images/tv-bench.jpg"],
+    "dealName": "Living Room Bundle",
+    "dealLink": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Bundle"
   },
   {
     "id": "hemnes-daybed",
