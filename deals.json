@@ -9,5 +9,45 @@
     "images": ["images/living-room-bundle-collage.jpg", "images/sofa-1.jpg", "images/sofa-2.jpg", "images/tv-1.jpg", "images/tv-2.jpg", "images/tv-bench.jpg"],
     "link": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Living%20Room%20Bundle",
     "description": "Sofa, TV, and TV bench together. Free delivery within 30 km of Almere Hout."
+  },
+  {
+    "id": "ready-to-move-in-bundle",
+    "name": "Ready to Move In Bundle",
+    "price": 1700,
+    "originalPrice": 1800,
+    "freeDelivery": true,
+    "items": [
+      "JAXX Choice Sofa",
+      "LG Smart TV OLED 55\"",
+      "IKEA Hemnes TV Bench",
+      "Dining Table + 6 Chairs",
+      "IKEA ELVARLI Wardrobe Combination",
+      "IKEA Hemnes High Cabinet with Mirror Door",
+      "IKEA Hemnes Day-bed Frame",
+      "IKEA BOAXEL Mesh Basket",
+      "TP-Link Router"
+    ],
+    "images": [
+      "images/living-room-bundle-collage.jpg",
+      "images/sofa-1.jpg",
+      "images/sofa-2.jpg",
+      "images/tv-1.jpg",
+      "images/tv-2.jpg",
+      "images/tv-bench.jpg",
+      "images/dining-table-1.jpg",
+      "images/dining-table-2.jpg",
+      "images/dining-table-3.jpg",
+      "images/wardrobe-1.jpg",
+      "images/wardrobe-2.jpg",
+      "images/mirror-cabinet-1.jpg",
+      "images/mirror-cabinet-2.jpg",
+      "images/daybed-1.jpg",
+      "images/daybed-2.jpg",
+      "images/mesh-basket-1.jpg",
+      "images/mesh-basket-2.jpg",
+      "images/router.jpg"
+    ],
+    "link": "https://wa.me/31620659657?text=Hi%2C%20I%27m%20interested%20in%20the%20Ready%20to%20Move%20In%20Bundle",
+    "description": "Everything you need to furnish a home in one go: sofa, TV, TV bench, dining table with chairs, wardrobe, mirror cabinet, day-bed, mesh baskets, and a free router. Free delivery within 50 km of Almere Hout."
   }
 ]

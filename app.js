@@ -7,15 +7,81 @@
   const lightboxClose = document.querySelector(".lightbox__close");
   const lightboxPrevBtn = document.querySelector(".lightbox__arrow--prev");
   const lightboxNextBtn = document.querySelector(".lightbox__arrow--next");
+  const whatsappLink = document.querySelector(".site-header__whatsapp");
+  const basketCount = document.getElementById("basket-count");
+  const basketTotal = document.getElementById("basket-total");
+  const WHATSAPP_BASE_URL = "https://wa.me/31620659657";
 
   const state = { items: [], deals: [], filter: "all" };
   let lightboxPhotos = [];
   let lightboxIndex = 0;
+  const basket = {};
 
   function render() {
     grid.innerHTML = window.MovingSale.buildCardList(state.items, state.deals, state.filter);
     wireCarousels();
     wireLightbox();
+    wireBasketButtons();
+  }
+
+  function findById(id) {
+    return state.items.concat(state.deals).find(function (entry) {
+      return entry.id === id;
+    });
+  }
+
+  function syncBasketButton(button, id) {
+    const inBasket = Boolean(basket[id]);
+    button.classList.toggle("card__basket-btn--active", inBasket);
+    button.textContent = inBasket ? "✓ Added to my list" : "🛒 Add to my list";
+  }
+
+  function toggleBasketItem(id, button) {
+    if (basket[id]) {
+      delete basket[id];
+    } else {
+      const entry = findById(id);
+      if (!entry) {
+        return;
+      }
+      basket[id] = { title: entry.title || entry.name, price: entry.price };
+    }
+    syncBasketButton(button, id);
+    updateBasketIndicator();
+    updateWhatsAppLink();
+  }
+
+  function updateBasketIndicator() {
+    const entries = Object.keys(basket).map(function (id) { return basket[id]; });
+    const total = entries.reduce(function (sum, entry) { return sum + entry.price; }, 0);
+    basketCount.textContent = String(entries.length);
+    basketTotal.textContent = entries.length > 0 ? window.MovingSale.formatPrice(total) : "";
+  }
+
+  function updateWhatsAppLink() {
+    const entries = Object.keys(basket).map(function (id) { return basket[id]; });
+    if (entries.length === 0) {
+      whatsappLink.href = WHATSAPP_BASE_URL;
+      return;
+    }
+    const total = entries.reduce(function (sum, entry) { return sum + entry.price; }, 0);
+    const lines = entries.map(function (entry) {
+      return "- " + entry.title + " (" + window.MovingSale.formatPrice(entry.price) + ")";
+    });
+    const message = "Hi! I'm interested in these items:\n" + lines.join("\n") +
+      "\n\nTotal: " + window.MovingSale.formatPrice(total);
+    whatsappLink.href = WHATSAPP_BASE_URL + "?text=" + encodeURIComponent(message);
+  }
+
+  function wireBasketButtons() {
+    const buttons = grid.querySelectorAll(".card__basket-btn");
+    buttons.forEach(function (button) {
+      const id = button.getAttribute("data-id");
+      syncBasketButton(button, id);
+      button.addEventListener("click", function () {
+        toggleBasketItem(id, button);
+      });
+    });
   }
 
   function highSrcFor(src) {

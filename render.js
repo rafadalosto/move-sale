@@ -96,6 +96,8 @@
       ? '<a class="card__cta" href="' + escapeHTML(item.specsLink) +
         '" target="_blank" rel="noopener">View Specs ↗</a>'
       : "";
+    const basketBtn = '<button class="card__cta card__basket-btn" type="button" data-id="' +
+      escapeHTML(item.id) + '">🛒 Add to my list</button>';
 
     return (
       '<article class="card card--item">' +
@@ -108,6 +110,7 @@
       description +
       dealTag +
       specsLink +
+      basketBtn +
       "</div>" +
       "</article>"
     );
@@ -132,6 +135,8 @@
       ? '<a class="card__cta" href="' + escapeHTML(deal.link) +
         '" target="_blank" rel="noopener">💬 I want it</a>'
       : "";
+    const basketBtn = '<button class="card__cta card__basket-btn" type="button" data-id="' +
+      escapeHTML(deal.id) + '">🛒 Add to my list</button>';
 
     return (
       '<article class="card card--deal">' +
@@ -143,6 +148,7 @@
       items +
       description +
       link +
+      basketBtn +
       "</div>" +
       "</article>"
     );

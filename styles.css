@@ -55,8 +55,22 @@ body {
   text-decoration: underline;
 }
 
-.site-header__whatsapp {
+.site-header__basket {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-weight: bold;
+  border: var(--border-thin);
+  padding: 0.5rem 0.75rem;
+}
+
+.site-header__basket-total {
+  color: var(--color-blue);
+}
+
+.site-header__whatsapp {
   background: var(--color-blue);
   color: #ffffff;
   border: var(--border-thin);
@@ -310,6 +324,22 @@ body {
 
 .card__cta:hover {
   background: var(--color-red);
+}
+
+.card__basket-btn {
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.card__basket-btn--active {
+  background: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.card__basket-btn--active:hover {
+  background: var(--color-yellow);
 }
 
 @media (prefers-reduced-motion: reduce) {

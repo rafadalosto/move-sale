@@ -28,7 +28,8 @@
       "images/dining-table-2.jpg",
       "images/dining-table-3.jpg"
     ],
-    "specsLink": "https://www.ikea.com/nl/en/p/bergmund-chair-frame-white-40451905/"
+    "specsLink": "https://www.ikea.com/nl/en/p/bergmund-chair-frame-white-40451905/",
+    "dealName": "Ready to Move In Bundle"
   },
   {
     "id": "lg-tv",
@@ -51,7 +52,8 @@
     ],
     "description": "Modular ELVARLI wardrobe combination, flexible open storage system.",
     "images": ["images/wardrobe-1.jpg", "images/wardrobe-2.jpg"],
-    "specsLink": "https://www.ikea.com/nl/nl/cat/elvarli-systeem-35766/"
+    "specsLink": "https://www.ikea.com/nl/nl/cat/elvarli-systeem-35766/",
+    "dealName": "Ready to Move In Bundle"
   },
   {
     "id": "hemnes-mirror-cabinet",
@@ -61,7 +63,8 @@
     "specs": ["White", "49 x 31 x 200 cm"],
     "description": "Hemnes high cabinet with mirror door. Has a damage hole — check the photo.",
     "images": ["images/mirror-cabinet-1.jpg", "images/mirror-cabinet-2.jpg"],
-    "specsLink": "https://www.ikea.com/nl/en/p/hemnes-high-cabinet-with-mirror-door-white-70217685/"
+    "specsLink": "https://www.ikea.com/nl/en/p/hemnes-high-cabinet-with-mirror-door-white-70217685/",
+    "dealName": "Ready to Move In Bundle"
   },
   {
     "id": "hemnes-chest-8",
@@ -98,7 +101,8 @@
     "specs": ["3 drawers", "White", "80 x 200 cm"],
     "description": "Hemnes day-bed frame with 3 drawers. Has some signs of use.",
     "images": ["images/daybed-1.jpg", "images/daybed-2.jpg"],
-    "specsLink": "https://www.ikea.com/nl/en/p/hemnes-day-bed-frame-with-3-drawers-white-90349326/"
+    "specsLink": "https://www.ikea.com/nl/en/p/hemnes-day-bed-frame-with-3-drawers-white-90349326/",
+    "dealName": "Ready to Move In Bundle"
   },
   {
     "id": "eket-cabinet",
@@ -122,7 +126,8 @@
     ],
     "description": "BOAXEL mesh baskets, new and never installed, includes mounting hardware.",
     "images": ["images/mesh-basket-1.jpg", "images/mesh-basket-2.jpg"],
-    "specsLink": "https://www.ikea.com/nl/en/p/boaxel-mesh-basket-white-20448749/"
+    "specsLink": "https://www.ikea.com/nl/en/p/boaxel-mesh-basket-white-20448749/",
+    "dealName": "Ready to Move In Bundle"
   },
   {
     "id": "nissedal-mirror",
@@ -149,7 +154,8 @@
     "price": 0,
     "badge": "Donation",
     "description": "Free to a good home — working TP-Link router.",
-    "images": ["images/router.jpg"]
+    "images": ["images/router.jpg"],
+    "dealName": "Ready to Move In Bundle"
   },
   {
     "id": "venetian-blinds",
