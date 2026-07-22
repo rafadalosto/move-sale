@@ -38,7 +38,8 @@
     "specs": ["OLED display", "120Hz refresh rate"],
     "description": "LG Smart TV OLED 55\", 4 years of use.",
     "images": ["images/tv-1.jpg", "images/tv-2.jpg"],
-    "dealName": "Living Room Bundle"
+    "dealName": "Living Room Bundle",
+    "reserved": true
   },
   {
     "id": "elvarli-wardrobe",
