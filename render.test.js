@@ -157,6 +157,81 @@ test('renderItemCardHTML sets "photo N of M" alt text only when there are multip
   assert.match(multi, /alt="Sofa — photo 2 of 2"/);
 });
 
+test("renderItemCardHTML renders a reserved ribbon, card--reserved class, and disabled basket button when reserved is true", () => {
+  const html = renderItemCardHTML({
+    id: "sofa",
+    title: "Sofa",
+    price: 800,
+    images: ["images/sofa.jpg"],
+    reserved: true,
+  });
+  assert.match(html, /class="card card--item card--reserved"/);
+  assert.match(html, /<span class="card__reserved-ribbon">Reserved<\/span>/);
+  assert.match(
+    html,
+    /<button class="card__cta card__basket-btn card__basket-btn--reserved" type="button" data-id="sofa" disabled>🔒 Reserved<\/button>/
+  );
+});
+
+test("renderItemCardHTML omits the reserved ribbon and keeps the basket button enabled when reserved is absent", () => {
+  const html = renderItemCardHTML({
+    id: "sofa",
+    title: "Sofa",
+    price: 800,
+    images: ["images/sofa.jpg"],
+  });
+  assert.equal(html.includes("card--reserved"), false);
+  assert.equal(html.includes("card__reserved-ribbon"), false);
+  assert.match(
+    html,
+    /<button class="card__cta card__basket-btn" type="button" data-id="sofa">🛒 Add to my list<\/button>/
+  );
+});
+
+test("renderItemCardHTML shows both the status badge and the reserved ribbon together", () => {
+  const html = renderItemCardHTML({
+    id: "sofa",
+    title: "Sofa",
+    price: 800,
+    badge: "8 Months Old",
+    images: ["images/sofa.jpg"],
+    reserved: true,
+  });
+  assert.match(html, /<span class="card__badge">8 Months Old<\/span>/);
+  assert.match(html, /card__reserved-ribbon/);
+});
+
+test("renderDealCardHTML renders a reserved ribbon, card--reserved class, and disabled basket button when reserved is true", () => {
+  const html = renderDealCardHTML({
+    id: "combo",
+    name: "Combo",
+    price: 1000,
+    images: ["images/combo.jpg"],
+    reserved: true,
+  });
+  assert.match(html, /class="card card--deal card--reserved"/);
+  assert.match(html, /<span class="card__reserved-ribbon">Reserved<\/span>/);
+  assert.match(
+    html,
+    /<button class="card__cta card__basket-btn card__basket-btn--reserved" type="button" data-id="combo" disabled>🔒 Reserved<\/button>/
+  );
+});
+
+test("renderDealCardHTML omits the reserved ribbon and keeps the basket button enabled when reserved is absent", () => {
+  const html = renderDealCardHTML({
+    id: "combo",
+    name: "Combo",
+    price: 1000,
+    images: ["images/combo.jpg"],
+  });
+  assert.equal(html.includes("card--reserved"), false);
+  assert.equal(html.includes("card__reserved-ribbon"), false);
+  assert.match(
+    html,
+    /<button class="card__cta card__basket-btn" type="button" data-id="combo">🛒 Add to my list<\/button>/
+  );
+});
+
 test("renderDealCardHTML includes price, original price, and free delivery badge", () => {
   const html = renderDealCardHTML({
     id: "combo",

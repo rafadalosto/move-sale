@@ -15,6 +15,7 @@ Edit `items.json`. Each entry:
 - `description` (string, optional)
 - `specsLink` (string, optional) — full URL, adds a "View Specs ↗" button
 - `dealName` (string, optional) — marks the item as part of a deal; shows a plain, non-clickable "🔗 Part of: {dealName}" tag (it doesn't link anywhere, to avoid opening WhatsApp by accident)
+- `reserved` (boolean, optional) — marks the item as no longer available; shows a diagonal "Reserved" ribbon and disables its "Add to my list" button so it can't be added to the basket
 
 To mark something sold, delete its entry from `items.json`.
 
@@ -28,6 +29,7 @@ Edit `deals.json`. Each entry:
 - `items` (array of strings, optional) — display-only list of bundled item names
 - `link` (string, optional) — outbound URL for the "💬 I want it" button
 - `description` (string, optional)
+- `reserved` (boolean, optional) — same behavior as for items: shows a diagonal "Reserved" ribbon and disables the "Add to my list" button
 
 An item is linked to a deal only through its own `dealName` field (display-only, not a link) — `deals.json` does not reference `items.json`.
 

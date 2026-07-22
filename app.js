@@ -76,6 +76,9 @@
   function wireBasketButtons() {
     const buttons = grid.querySelectorAll(".card__basket-btn");
     buttons.forEach(function (button) {
+      if (button.disabled) {
+        return;
+      }
       const id = button.getAttribute("data-id");
       syncBasketButton(button, id);
       button.addEventListener("click", function () {

@@ -139,6 +139,7 @@ body {
 
 .card {
   position: relative;
+  overflow: hidden;
   border: var(--border-thick);
   background: var(--color-bg);
   display: flex;
@@ -191,6 +192,34 @@ body {
 
 .card__badge--delivery {
   background: var(--color-blue);
+}
+
+.card--reserved .card__carousel {
+  filter: grayscale(55%);
+  opacity: 0.7;
+}
+
+.card--reserved .card__body {
+  opacity: 0.75;
+}
+
+.card__reserved-ribbon {
+  position: absolute;
+  top: 3rem;
+  right: -2rem;
+  width: 12rem;
+  padding: 0.45rem 0;
+  background: var(--color-red);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.08em;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .card__carousel {
@@ -340,6 +369,16 @@ body {
 
 .card__basket-btn--active:hover {
   background: var(--color-yellow);
+}
+
+.card__basket-btn:disabled {
+  background: #999999;
+  color: #eeeeee;
+  cursor: not-allowed;
+}
+
+.card__basket-btn:disabled:hover {
+  background: #999999;
 }
 
 @media (prefers-reduced-motion: reduce) {

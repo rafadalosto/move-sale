@@ -77,9 +77,21 @@
     );
   }
 
+  function renderBasketButtonHTML(id, reserved) {
+    if (reserved) {
+      return '<button class="card__cta card__basket-btn card__basket-btn--reserved" type="button" data-id="' +
+        escapeHTML(id) + '" disabled>🔒 Reserved</button>';
+    }
+    return '<button class="card__cta card__basket-btn" type="button" data-id="' +
+      escapeHTML(id) + '">🛒 Add to my list</button>';
+  }
+
   function renderItemCardHTML(item) {
     const badge = item.badge
       ? '<span class="card__badge">' + escapeHTML(item.badge) + "</span>"
+      : "";
+    const reservedRibbon = item.reserved
+      ? '<span class="card__reserved-ribbon">Reserved</span>'
       : "";
     const specs = Array.isArray(item.specs) && item.specs.length
       ? '<ul class="card__specs">' +
@@ -96,12 +108,13 @@
       ? '<a class="card__cta" href="' + escapeHTML(item.specsLink) +
         '" target="_blank" rel="noopener">View Specs ↗</a>'
       : "";
-    const basketBtn = '<button class="card__cta card__basket-btn" type="button" data-id="' +
-      escapeHTML(item.id) + '">🛒 Add to my list</button>';
+    const basketBtn = renderBasketButtonHTML(item.id, item.reserved);
+    const cardClass = "card card--item" + (item.reserved ? " card--reserved" : "");
 
     return (
-      '<article class="card card--item">' +
+      '<article class="' + cardClass + '">' +
       badge +
+      reservedRibbon +
       renderCarouselHTML(item.images, item.title) +
       '<div class="card__body">' +
       '<p class="card__price">' + formatPrice(item.price) + "</p>" +
@@ -123,6 +136,9 @@
     const freeDelivery = deal.freeDelivery
       ? '<span class="card__badge card__badge--delivery">🚚 Free delivery</span>'
       : "";
+    const reservedRibbon = deal.reserved
+      ? '<span class="card__reserved-ribbon">Reserved</span>'
+      : "";
     const items = Array.isArray(deal.items) && deal.items.length
       ? '<ul class="card__specs">' +
         deal.items.map(function (name) { return "<li>" + escapeHTML(name) + "</li>"; }).join("") +
@@ -135,12 +151,13 @@
       ? '<a class="card__cta" href="' + escapeHTML(deal.link) +
         '" target="_blank" rel="noopener">💬 I want it</a>'
       : "";
-    const basketBtn = '<button class="card__cta card__basket-btn" type="button" data-id="' +
-      escapeHTML(deal.id) + '">🛒 Add to my list</button>';
+    const basketBtn = renderBasketButtonHTML(deal.id, deal.reserved);
+    const cardClass = "card card--deal" + (deal.reserved ? " card--reserved" : "");
 
     return (
-      '<article class="card card--deal">' +
+      '<article class="' + cardClass + '">' +
       freeDelivery +
+      reservedRibbon +
       renderCarouselHTML(deal.images, deal.name) +
       '<div class="card__body">' +
       '<p class="card__price">' + formatPrice(deal.price) + " " + originalPrice + "</p>" +
