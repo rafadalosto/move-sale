@@ -30,20 +30,6 @@
     "images": ["images/sofa-1.jpg", "images/sofa-2.jpg"]
   },
   {
-    "id": "elvarli-wardrobe",
-    "title": "IKEA ELVARLI Wardrobe Combination",
-    "price": 150,
-    "specs": [
-      "2 units",
-      "Wardrobe combination (4 drawers), white, 165 x 55 x 216 cm",
-      "Wardrobe combination (3 shelves), white, 84 x 40 x 216 cm"
-    ],
-    "description": "Modular ELVARLI wardrobe combination, flexible open storage system.",
-    "images": ["images/wardrobe-1.jpg", "images/wardrobe-2.jpg"],
-    "specsLink": "https://www.ikea.com/nl/nl/cat/elvarli-systeem-35766/",
-    "reserved": true
-  },
-  {
     "id": "hemnes-mirror-cabinet",
     "title": "IKEA Hemnes High Cabinet with Mirror Door",
     "price": 50,
@@ -78,17 +64,6 @@
     "specs": ["White stain", "Width: 180 cm"],
     "description": "Hemnes TV bench, white stain finish.",
     "images": ["images/tv-bench.jpg"]
-  },
-  {
-    "id": "hemnes-daybed",
-    "title": "IKEA Hemnes Day-bed Frame",
-    "price": 100,
-    "badge": "Signs of Use",
-    "specs": ["3 drawers", "White", "80 x 200 cm"],
-    "description": "Hemnes day-bed frame with 3 drawers. Has some signs of use.",
-    "images": ["images/daybed-1.jpg", "images/daybed-2.jpg"],
-    "specsLink": "https://www.ikea.com/nl/en/p/hemnes-day-bed-frame-with-3-drawers-white-90349326/",
-    "reserved": true
   },
   {
     "id": "eket-cabinet",
